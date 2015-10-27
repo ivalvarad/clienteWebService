@@ -11,6 +11,7 @@
  * @author Iva
  */
 import javax.swing.*;
+import javax.xml.ws.BindingProvider;
 public class Interfaz extends javax.swing.JFrame {
 
     /**
@@ -18,6 +19,9 @@ public class Interfaz extends javax.swing.JFrame {
      */
     public Interfaz() {
         initComponents();
+        service = new ecci_ahorcado.ECCIAhorcado();
+        port = service.getECCIAhorcadoPort();
+        ((BindingProvider)port).getRequestContext().put(BindingProvider.SESSION_MAINTAIN_PROPERTY,true);
     }
 
     /**
@@ -142,10 +146,7 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String numS = jTextField1.getText();
-        int num = Integer.valueOf(numS);
+    private void cambiarImagen(int num){
         ImageIcon prueba = new ImageIcon();
         switch(num){
             case 0:
@@ -171,6 +172,49 @@ public class Interfaz extends javax.swing.JFrame {
             break;
         }
         jLabel1.setIcon(prueba);
+    }
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        boolean haGanado = false;
+        boolean haPerdido = false;
+        int oportunidades = 0;
+        
+        String num = jTextField1.getText();
+        
+        if(haGanado){
+            jTextField1.setText("");
+            jTextField1.setEditable(false);
+            jTextField2.setText("GetLaIncognitaFromServicio"); //port.getIncognita();
+            jTextField3.setText("");
+            cambiarImagen(0); //cambiarla por una de triunfo
+        }else{
+            if(haPerdido){
+                jTextField1.setText("");
+                jTextField1.setEditable(false);
+                jTextField2.setText("GetLaIncognitaFromServicio"); //port.getIncognita();
+                jTextField3.setText("0");
+                cambiarImagen(6);
+            }else{
+                    /*
+                        tomo la letra ingresada
+                        la envío a validar al servicio
+                        pido la incognita al servicio y la refresco en la interfaz
+                        pido las oportunidades al servicio y las refresco en la interfaz
+                        con las oportunidades refresco la imagen
+                        limpio el campo de la letra
+                    */
+                    //port.validar(num);
+                    //jTextField2.setText(port.getIncognita());
+                    //oportunidades = port.getOportunidades()
+                    //jTextField3.setText(oportunidades);
+                    //int oportunidadesLeft = 6 - oportunidades;
+                    //cambiarImagen(oportunidadesLeft);
+                    //haGanado = port.getHaGanado();
+                    //haPerdido = port.getHaPerdido();
+                    jTextField1.setText("");
+                 }
+            }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -220,4 +264,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    ecci_ahorcado.ECCIAhorcado service;
+    ecci_ahorcado.ECCIAhorcadoPort port;
+    //return port.salude(nombre);
 }
