@@ -49,6 +49,20 @@
       <xsd:element name="setPalabraReturn">
         <xsd:complexType />
       </xsd:element>
+	  <xsd:element name="validar">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="letra" type="xsd:positiveInteger" nillable="true" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+	  <xsd:element name="validarReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validarResult" type="xsd:positiveInteger" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="servidorEstampillaDeTiempo">
         <xsd:complexType />
       </xsd:element>
@@ -97,7 +111,13 @@
   <message name="setPalabraResponse">
     <part name="parameters" element="tns:setPalabraReturn" />
   </message>
+  <message name="validarRequest">
+    <part name="parameters" element="tns:validar" />
+  </message>
 
+  <message name="validarResponse">
+    <part name="parameters" element="tns:validarReturn" />
+  </message>
   <message name="servidorEstampillaDeTiempoRequest">
     <part name="parameters" element="tns:servidorEstampillaDeTiempo" />
   </message>
@@ -131,6 +151,11 @@
 	<operation name="setPalabra">
       <input message="tns:setPalabraRequest" />
       <output message="tns:setPalabraResponse" />
+    </operation>
+	
+	<operation name="validar">
+      <input message="tns:validarRequest" />
+      <output message="tns:validarResponse" />
     </operation>
 
     <operation name="servidorEstampillaDeTiempo">
@@ -179,7 +204,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
-	
+	<operation name="validar">
+      <soap:operation soapAction="urn:ECCI_Ahorcado#Ahorcado#validar" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="servidorEstampillaDeTiempo">
       <soap:operation soapAction="urn:ECCI_Ahorcado#Ahorcado#servidorEstampillaDeTiempo" style="document" />
       <input>

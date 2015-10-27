@@ -46,6 +46,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Validar }
+     * 
+     */
+    public Validar createValidar() {
+        return new Validar();
+    }
+
+    /**
      * Create an instance of {@link SetPalabra }
      * 
      */
@@ -75,6 +83,14 @@ public class ObjectFactory {
      */
     public UltimoSaludoReturn createUltimoSaludoReturn() {
         return new UltimoSaludoReturn();
+    }
+
+    /**
+     * Create an instance of {@link ValidarReturn }
+     * 
+     */
+    public ValidarReturn createValidarReturn() {
+        return new ValidarReturn();
     }
 
     /**

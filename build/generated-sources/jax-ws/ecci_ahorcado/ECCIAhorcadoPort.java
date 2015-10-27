@@ -1,6 +1,7 @@
 
 package ecci_ahorcado;
 
+import java.math.BigInteger;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -58,6 +59,20 @@ public interface ECCIAhorcadoPort {
     public void setPalabra(
         @WebParam(name = "nPalabra", targetNamespace = "")
         String nPalabra);
+
+    /**
+     * 
+     * @param letra
+     * @return
+     *     returns java.math.BigInteger
+     */
+    @WebMethod(action = "urn:ECCI_Ahorcado#Ahorcado#validar")
+    @WebResult(name = "validarResult", targetNamespace = "")
+    @RequestWrapper(localName = "validar", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.Validar")
+    @ResponseWrapper(localName = "validarReturn", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.ValidarReturn")
+    public BigInteger validar(
+        @WebParam(name = "letra", targetNamespace = "")
+        BigInteger letra);
 
     /**
      * 
