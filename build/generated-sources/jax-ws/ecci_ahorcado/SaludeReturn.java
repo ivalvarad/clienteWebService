@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Clase Java para anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType>
@@ -38,7 +38,7 @@ public class SaludeReturn {
     protected String saludeResult;
 
     /**
-     * Gets the value of the saludeResult property.
+     * Obtiene el valor de la propiedad saludeResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class SaludeReturn {
     }
 
     /**
-     * Sets the value of the saludeResult property.
+     * Define el valor de la propiedad saludeResult.
      * 
      * @param value
      *     allowed object is

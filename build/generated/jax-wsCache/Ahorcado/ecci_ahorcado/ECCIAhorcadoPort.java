@@ -89,6 +89,28 @@ public interface ECCIAhorcadoPort {
      * @return
      *     returns java.lang.String
      */
+    @WebMethod(action = "urn:ECCI_Ahorcado#Ahorcado#getIntentos")
+    @WebResult(name = "getIntentosResult", targetNamespace = "")
+    @RequestWrapper(localName = "getIntentos", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.GetIntentos")
+    @ResponseWrapper(localName = "getIntentosReturn", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.GetIntentosReturn")
+    public String getIntentos();
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(action = "urn:ECCI_Ahorcado#Ahorcado#siGano")
+    @WebResult(name = "siGanoResult", targetNamespace = "")
+    @RequestWrapper(localName = "siGano", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.SiGano")
+    @ResponseWrapper(localName = "siGanoReturn", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.SiGanoReturn")
+    public String siGano();
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
     @WebMethod(action = "urn:ECCI_Ahorcado#Ahorcado#servidorEstampillaDeTiempo")
     @WebResult(name = "servidorEstampillaDeTiempoResult", targetNamespace = "")
     @RequestWrapper(localName = "servidorEstampillaDeTiempo", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.ServidorEstampillaDeTiempo")

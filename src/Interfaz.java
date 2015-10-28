@@ -14,6 +14,7 @@ import javax.swing.*;
 import javax.xml.ws.BindingProvider;
 public class Interfaz extends javax.swing.JFrame {
 private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
+boolean jugando=true;
     /**
      * Creates new form Interfaz
      */
@@ -38,13 +39,12 @@ private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,20 +68,14 @@ private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel4.setText("Incógnita");
 
-        jTextField2.setEditable(false);
-
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-
-        jTextField3.setEditable(false);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel3.setText("Quedan:");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel5.setText("oportunidades");
-
-        jLabel6.setText("jLabel6");
 
         jLabel7.setText("jLabel7");
 
@@ -95,30 +89,28 @@ private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
                         .addContainerGap()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel7))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(jButton1))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))))
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel6)))
                 .addGap(6, 6, 6)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addComponent(jLabel5))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
@@ -136,22 +128,20 @@ private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
                         .addComponent(jLabel7)
                         .addGap(24, 24, 24)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74))
+                        .addComponent(jLabel6)
+                        .addGap(88, 88, 88))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(33, 33, 33)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel8))
+                        .addGap(36, 36, 36)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(39, Short.MAX_VALUE))))
+                        .addContainerGap(40, Short.MAX_VALUE))))
         );
 
         pack();
@@ -162,7 +152,8 @@ private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if(jugando){
+// TODO add your handling code here:
         String numS = jTextField1.getText();
        // int num = Integer.valueOf(numS);
         
@@ -171,33 +162,38 @@ private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
         this.jLabel6.setText(ahorcado.getIncognita());
         
         this.jLabel7.setText(ahorcado.validar(  this.jTextField1.getText()     )    );
+        int num=Integer.parseInt(ahorcado.getIntentos());
+        this.jLabel8.setText(ahorcado.getIntentos());
         ImageIcon prueba = new ImageIcon();
-        /*
-        switch(num){
-            case 0:
-                prueba = new ImageIcon(((new ImageIcon("0.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-            break;
-            case 1:
-                prueba = new ImageIcon(((new ImageIcon("1.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-            break;
-            case 2:
-                prueba = new ImageIcon(((new ImageIcon("2.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-            break;
-            case 3:
-                prueba = new ImageIcon(((new ImageIcon("3.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-            break;
-            case 4:
-                prueba = new ImageIcon(((new ImageIcon("4.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-            break;
-            case 5:
-                prueba = new ImageIcon(((new ImageIcon("5.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-            break;
-            case 6:
-                prueba = new ImageIcon(((new ImageIcon("6.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-            break;
-        }
+        
+            switch(num){
+                case 6:
+                    prueba = new ImageIcon(((new ImageIcon("0.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
+                break;
+                case 5:
+                    prueba = new ImageIcon(((new ImageIcon("1.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
+                break;
+                case 4:
+                    prueba = new ImageIcon(((new ImageIcon("2.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
+                break;
+                case 3:
+                    prueba = new ImageIcon(((new ImageIcon("3.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
+                break;
+                case 2:
+                    prueba = new ImageIcon(((new ImageIcon("4.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
+                break;
+                case 1:
+                    prueba = new ImageIcon(((new ImageIcon("5.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
+                break;
+                case 0:
+                    prueba = new ImageIcon(((new ImageIcon("6.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
+                    this.jugando=false;
+                break;
+            }
+            
+       
         jLabel1.setIcon(prueba);
-        */
+         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -244,9 +240,8 @@ private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
