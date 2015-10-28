@@ -1,7 +1,6 @@
 
 package ecci_ahorcado;
 
-import java.math.BigInteger;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -64,15 +63,26 @@ public interface ECCIAhorcadoPort {
      * 
      * @param letra
      * @return
-     *     returns java.math.BigInteger
+     *     returns java.lang.String
      */
     @WebMethod(action = "urn:ECCI_Ahorcado#Ahorcado#validar")
     @WebResult(name = "validarResult", targetNamespace = "")
     @RequestWrapper(localName = "validar", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.Validar")
     @ResponseWrapper(localName = "validarReturn", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.ValidarReturn")
-    public BigInteger validar(
+    public String validar(
         @WebParam(name = "letra", targetNamespace = "")
-        BigInteger letra);
+        String letra);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(action = "urn:ECCI_Ahorcado#Ahorcado#getIncognita")
+    @WebResult(name = "getIncognitaResult", targetNamespace = "")
+    @RequestWrapper(localName = "getIncognita", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.GetIncognita")
+    @ResponseWrapper(localName = "getIncognitaReturn", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.GetIncognitaReturn")
+    public String getIncognita();
 
     /**
      * 

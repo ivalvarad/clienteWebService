@@ -1,12 +1,10 @@
 
 package ecci_ahorcado;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -20,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="validarResult" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/>
+ *         &lt;element name="validarResult" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,18 +35,17 @@ import javax.xml.bind.annotation.XmlType;
 public class ValidarReturn {
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger validarResult;
+    protected String validarResult;
 
     /**
      * Gets the value of the validarResult property.
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public BigInteger getValidarResult() {
+    public String getValidarResult() {
         return validarResult;
     }
 
@@ -57,10 +54,10 @@ public class ValidarReturn {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public void setValidarResult(BigInteger value) {
+    public void setValidarResult(String value) {
         this.validarResult = value;
     }
 

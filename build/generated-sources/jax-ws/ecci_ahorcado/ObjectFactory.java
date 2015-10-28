@@ -30,19 +30,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ServidorEstampillaDeTiempo }
+     * Create an instance of {@link GetIncognitaReturn }
      * 
      */
-    public ServidorEstampillaDeTiempo createServidorEstampillaDeTiempo() {
-        return new ServidorEstampillaDeTiempo();
-    }
-
-    /**
-     * Create an instance of {@link UltimoSaludo }
-     * 
-     */
-    public UltimoSaludo createUltimoSaludo() {
-        return new UltimoSaludo();
+    public GetIncognitaReturn createGetIncognitaReturn() {
+        return new GetIncognitaReturn();
     }
 
     /**
@@ -51,22 +43,6 @@ public class ObjectFactory {
      */
     public Validar createValidar() {
         return new Validar();
-    }
-
-    /**
-     * Create an instance of {@link SetPalabra }
-     * 
-     */
-    public SetPalabra createSetPalabra() {
-        return new SetPalabra();
-    }
-
-    /**
-     * Create an instance of {@link GetPalabra }
-     * 
-     */
-    public GetPalabra createGetPalabra() {
-        return new GetPalabra();
     }
 
     /**
@@ -94,6 +70,54 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ServidorEstampillaDeTiempoReturn }
+     * 
+     */
+    public ServidorEstampillaDeTiempoReturn createServidorEstampillaDeTiempoReturn() {
+        return new ServidorEstampillaDeTiempoReturn();
+    }
+
+    /**
+     * Create an instance of {@link ServidorEstampillaDeTiempo }
+     * 
+     */
+    public ServidorEstampillaDeTiempo createServidorEstampillaDeTiempo() {
+        return new ServidorEstampillaDeTiempo();
+    }
+
+    /**
+     * Create an instance of {@link UltimoSaludo }
+     * 
+     */
+    public UltimoSaludo createUltimoSaludo() {
+        return new UltimoSaludo();
+    }
+
+    /**
+     * Create an instance of {@link SetPalabra }
+     * 
+     */
+    public SetPalabra createSetPalabra() {
+        return new SetPalabra();
+    }
+
+    /**
+     * Create an instance of {@link GetPalabra }
+     * 
+     */
+    public GetPalabra createGetPalabra() {
+        return new GetPalabra();
+    }
+
+    /**
+     * Create an instance of {@link GetIncognita }
+     * 
+     */
+    public GetIncognita createGetIncognita() {
+        return new GetIncognita();
+    }
+
+    /**
      * Create an instance of {@link GetPalabraReturn }
      * 
      */
@@ -107,14 +131,6 @@ public class ObjectFactory {
      */
     public SaludeReturn createSaludeReturn() {
         return new SaludeReturn();
-    }
-
-    /**
-     * Create an instance of {@link ServidorEstampillaDeTiempoReturn }
-     * 
-     */
-    public ServidorEstampillaDeTiempoReturn createServidorEstampillaDeTiempoReturn() {
-        return new ServidorEstampillaDeTiempoReturn();
     }
 
     /**

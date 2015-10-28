@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="letra" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="getIncognitaResult" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "letra"
+    "getIncognitaResult"
 })
-@XmlRootElement(name = "validar")
-public class Validar {
+@XmlRootElement(name = "getIncognitaReturn")
+public class GetIncognitaReturn {
 
-    @XmlElement(required = true, nillable = true)
-    protected String letra;
+    @XmlElement(required = true)
+    protected String getIncognitaResult;
 
     /**
-     * Gets the value of the letra property.
+     * Gets the value of the getIncognitaResult property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLetra() {
-        return letra;
+    public String getGetIncognitaResult() {
+        return getIncognitaResult;
     }
 
     /**
-     * Sets the value of the letra property.
+     * Sets the value of the getIncognitaResult property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLetra(String value) {
-        this.letra = value;
+    public void setGetIncognitaResult(String value) {
+        this.getIncognitaResult = value;
     }
 
 }
