@@ -23,6 +23,9 @@ boolean jugando=true;
         ahorcado = service.getECCIAhorcadoPort();
         ((BindingProvider)ahorcado).getRequestContext().put(BindingProvider.SESSION_MAINTAIN_PROPERTY,true);
         initComponents();
+        service = new ecci_ahorcado.ECCIAhorcado();
+        port = service.getECCIAhorcadoPort();
+        ((BindingProvider)port).getRequestContext().put(BindingProvider.SESSION_MAINTAIN_PROPERTY,true);
     }
 
     /**
@@ -151,19 +154,58 @@ boolean jugando=true;
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(jugando){
-// TODO add your handling code here:
-        String numS = jTextField1.getText();
-       // int num = Integer.valueOf(numS);
+
+    
+
+   // private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {  
+/*
+        // TODO add your handling code here:
+        boolean haGanado = false;
+        boolean haPerdido = false;
+        int oportunidades = 0;
         
-        //ahorcado.setPalabra("HOLA");
+        String num = jTextField1.getText();
         
-        this.jLabel6.setText(ahorcado.getIncognita());
+        if(haGanado){
+            jTextField1.setText("");
+            jTextField1.setEditable(false);
+            jTextField2.setText("GetLaIncognitaFromServicio"); //port.getIncognita();
+            jTextField3.setText("");
+            cambiarImagen(0); //cambiarla por una de triunfo
+        }else{
+            if(haPerdido){
+                jTextField1.setText("");
+                jTextField1.setEditable(false);
+                jTextField2.setText("GetLaIncognitaFromServicio"); //port.getIncognita();
+                jTextField3.setText("0");
+                cambiarImagen(6);
+            }else{
+                    /*
+                        tomo la letra ingresada
+                        la envío a validar al servicio
+                        pido la incognita al servicio y la refresco en la interfaz
+                        pido las oportunidades al servicio y las refresco en la interfaz
+                        con las oportunidades refresco la imagen
+                        limpio el campo de la letra
+                    */
+                    //port.validar(num);
+                    //jTextField2.setText(port.getIncognita());
+                    //oportunidades = port.getOportunidades()
+                    //jTextField3.setText(oportunidades);
+                    //int oportunidadesLeft = 6 - oportunidades;
+                    //cambiarImagen(oportunidadesLeft);
+                    //haGanado = port.getHaGanado();
+                    //haPerdido = port.getHaPerdido();
+                   // jTextField1.setText("");
+              //   }
+          //  }*/        
         
-        this.jLabel7.setText(ahorcado.validar(  this.jTextField1.getText()     )    );
-        int num=Integer.parseInt(ahorcado.getIntentos());
-        this.jLabel8.setText(ahorcado.getIntentos());
+        
+        
+        
+        
+        
+    private void cambiarImagen(int num){   
         ImageIcon prueba = new ImageIcon();
         
             switch(num){
@@ -193,6 +235,27 @@ boolean jugando=true;
             
        
         jLabel1.setIcon(prueba);
+
+    }
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        
+        if(jugando){
+// TODO add your handling code here:
+        String numS = jTextField1.getText();
+       // int num = Integer.valueOf(numS);
+        
+        //ahorcado.setPalabra("HOLA");
+        
+        this.jLabel6.setText(ahorcado.getIncognita());
+        
+        this.jLabel7.setText(ahorcado.validar(  this.jTextField1.getText()     )    );
+
+        int num=Integer.parseInt(ahorcado.getIntentos());
+        this.jLabel8.setText(ahorcado.getIntentos());
+            this.cambiarImagen(num);
+
          }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -244,4 +307,8 @@ boolean jugando=true;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    ecci_ahorcado.ECCIAhorcado service;
+    ecci_ahorcado.ECCIAhorcadoPort port;
+    //return port.salude(nombre);
 }
