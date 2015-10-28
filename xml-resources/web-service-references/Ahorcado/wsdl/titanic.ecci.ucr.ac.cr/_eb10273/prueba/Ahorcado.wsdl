@@ -49,6 +49,30 @@
       <xsd:element name="setPalabraReturn">
         <xsd:complexType />
       </xsd:element>
+	  <xsd:element name="validar">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="letra" type="xsd:string" nillable="true" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+	  <xsd:element name="validarReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validarResult" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+	  <xsd:element name="getIncognita">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getIncognitaReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getIncognitaResult" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="servidorEstampillaDeTiempo">
         <xsd:complexType />
       </xsd:element>
@@ -97,7 +121,20 @@
   <message name="setPalabraResponse">
     <part name="parameters" element="tns:setPalabraReturn" />
   </message>
+  <message name="validarRequest">
+    <part name="parameters" element="tns:validar" />
+  </message>
 
+  <message name="validarResponse">
+    <part name="parameters" element="tns:validarReturn" />
+  </message>
+   <message name="getIncognitaRequest">
+    <part name="parameters" element="tns:getIncognita" />
+  </message>
+
+  <message name="getIncognitaResponse">
+    <part name="parameters" element="tns:getIncognitaReturn" />
+  </message>
   <message name="servidorEstampillaDeTiempoRequest">
     <part name="parameters" element="tns:servidorEstampillaDeTiempo" />
   </message>
@@ -132,7 +169,17 @@
       <input message="tns:setPalabraRequest" />
       <output message="tns:setPalabraResponse" />
     </operation>
-
+	
+	<operation name="validar">
+      <input message="tns:validarRequest" />
+      <output message="tns:validarResponse" />
+    </operation>
+	
+	<operation name="getIncognita">
+      <input message="tns:getIncognitaRequest" />
+      <output message="tns:getIncognitaResponse" />
+    </operation>
+	
     <operation name="servidorEstampillaDeTiempo">
       <input message="tns:servidorEstampillaDeTiempoRequest" />
       <output message="tns:servidorEstampillaDeTiempoResponse" />
@@ -179,7 +226,26 @@
         <soap:body use="literal" />
       </output>
     </operation>
+	<operation name="validar">
+      <soap:operation soapAction="urn:ECCI_Ahorcado#Ahorcado#validar" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
 	
+	<operation name="getIncognita">
+      <soap:operation soapAction="urn:ECCI_Ahorcado#Ahorcado#getIncognita" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
     <operation name="servidorEstampillaDeTiempo">
       <soap:operation soapAction="urn:ECCI_Ahorcado#Ahorcado#servidorEstampillaDeTiempo" style="document" />
       <input>

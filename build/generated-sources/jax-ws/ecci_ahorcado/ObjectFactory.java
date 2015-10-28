@@ -30,6 +30,54 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetIncognitaReturn }
+     * 
+     */
+    public GetIncognitaReturn createGetIncognitaReturn() {
+        return new GetIncognitaReturn();
+    }
+
+    /**
+     * Create an instance of {@link Validar }
+     * 
+     */
+    public Validar createValidar() {
+        return new Validar();
+    }
+
+    /**
+     * Create an instance of {@link SetPalabraReturn }
+     * 
+     */
+    public SetPalabraReturn createSetPalabraReturn() {
+        return new SetPalabraReturn();
+    }
+
+    /**
+     * Create an instance of {@link UltimoSaludoReturn }
+     * 
+     */
+    public UltimoSaludoReturn createUltimoSaludoReturn() {
+        return new UltimoSaludoReturn();
+    }
+
+    /**
+     * Create an instance of {@link ValidarReturn }
+     * 
+     */
+    public ValidarReturn createValidarReturn() {
+        return new ValidarReturn();
+    }
+
+    /**
+     * Create an instance of {@link ServidorEstampillaDeTiempoReturn }
+     * 
+     */
+    public ServidorEstampillaDeTiempoReturn createServidorEstampillaDeTiempoReturn() {
+        return new ServidorEstampillaDeTiempoReturn();
+    }
+
+    /**
      * Create an instance of {@link ServidorEstampillaDeTiempo }
      * 
      */
@@ -62,19 +110,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SetPalabraReturn }
+     * Create an instance of {@link GetIncognita }
      * 
      */
-    public SetPalabraReturn createSetPalabraReturn() {
-        return new SetPalabraReturn();
-    }
-
-    /**
-     * Create an instance of {@link UltimoSaludoReturn }
-     * 
-     */
-    public UltimoSaludoReturn createUltimoSaludoReturn() {
-        return new UltimoSaludoReturn();
+    public GetIncognita createGetIncognita() {
+        return new GetIncognita();
     }
 
     /**
@@ -91,14 +131,6 @@ public class ObjectFactory {
      */
     public SaludeReturn createSaludeReturn() {
         return new SaludeReturn();
-    }
-
-    /**
-     * Create an instance of {@link ServidorEstampillaDeTiempoReturn }
-     * 
-     */
-    public ServidorEstampillaDeTiempoReturn createServidorEstampillaDeTiempoReturn() {
-        return new ServidorEstampillaDeTiempoReturn();
     }
 
     /**

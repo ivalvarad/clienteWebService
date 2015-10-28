@@ -61,6 +61,31 @@ public interface ECCIAhorcadoPort {
 
     /**
      * 
+     * @param letra
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(action = "urn:ECCI_Ahorcado#Ahorcado#validar")
+    @WebResult(name = "validarResult", targetNamespace = "")
+    @RequestWrapper(localName = "validar", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.Validar")
+    @ResponseWrapper(localName = "validarReturn", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.ValidarReturn")
+    public String validar(
+        @WebParam(name = "letra", targetNamespace = "")
+        String letra);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(action = "urn:ECCI_Ahorcado#Ahorcado#getIncognita")
+    @WebResult(name = "getIncognitaResult", targetNamespace = "")
+    @RequestWrapper(localName = "getIncognita", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.GetIncognita")
+    @ResponseWrapper(localName = "getIncognitaReturn", targetNamespace = "urn:ECCI_Ahorcado", className = "ecci_ahorcado.GetIncognitaReturn")
+    public String getIncognita();
+
+    /**
+     * 
      * @return
      *     returns java.lang.String
      */
