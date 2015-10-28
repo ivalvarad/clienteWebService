@@ -14,7 +14,8 @@ import javax.swing.*;
 import javax.xml.ws.BindingProvider;
 public class Interfaz extends javax.swing.JFrame {
 private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
-boolean jugando=true;
+boolean perdido=false;
+boolean gano=false;
     /**
      * Creates new form Interfaz
      */
@@ -209,6 +210,9 @@ boolean jugando=true;
         ImageIcon prueba = new ImageIcon();
         
             switch(num){
+                case 7:
+                    prueba = new ImageIcon(((new ImageIcon("ganar.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
+                break;
                 case 6:
                     prueba = new ImageIcon(((new ImageIcon("0.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
                 break;
@@ -229,7 +233,7 @@ boolean jugando=true;
                 break;
                 case 0:
                     prueba = new ImageIcon(((new ImageIcon("6.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-                    this.jugando=false;
+                    this.perdido=true;
                 break;
             }
             
@@ -240,23 +244,30 @@ boolean jugando=true;
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+       /* if(ahorcado.siGano()=="1"){//gano
         
-        if(jugando){
-// TODO add your handling code here:
-        String numS = jTextField1.getText();
-       // int num = Integer.valueOf(numS);
+        }else if( Integer.parseInt(ahorcado.getIntentos())   >0){//no ha ganado pero intentos son mayor que 0
         
-        //ahorcado.setPalabra("HOLA");
+        }else{
         
+        }*/
         this.jLabel6.setText(ahorcado.getIncognita());
-        
-        this.jLabel7.setText(ahorcado.validar(  this.jTextField1.getText()     )    );
-
+        ahorcado.validar(  this.jTextField1.getText());
+        this.jLabel7.setText(    "."+ahorcado.siGano()+"."    );
+        if(ahorcado.siGano().equals("1")){
+        System.out.print("GANOOO");
         int num=Integer.parseInt(ahorcado.getIntentos());
         this.jLabel8.setText(ahorcado.getIntentos());
-            this.cambiarImagen(num);
+        this.cambiarImagen(7);
+        
+        }else{
+            if(!perdido){
 
-         }
+            int num=Integer.parseInt(ahorcado.getIntentos());
+            this.jLabel8.setText(ahorcado.getIntentos());
+            this.cambiarImagen(num);
+             }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
