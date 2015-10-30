@@ -82,8 +82,6 @@ boolean gano=false;
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel5.setText("oportunidades");
 
-        jLabel7.setText("jLabel7");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,7 +113,7 @@ boolean gano=false;
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
@@ -155,57 +153,8 @@ boolean gano=false;
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-
     
-
-   // private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {  
-/*
-        // TODO add your handling code here:
-        boolean haGanado = false;
-        boolean haPerdido = false;
-        int oportunidades = 0;
-        
-        String num = jTextField1.getText();
-        
-        if(haGanado){
-            jTextField1.setText("");
-            jTextField1.setEditable(false);
-            jTextField2.setText("GetLaIncognitaFromServicio"); //port.getIncognita();
-            jTextField3.setText("");
-            cambiarImagen(0); //cambiarla por una de triunfo
-        }else{
-            if(haPerdido){
-                jTextField1.setText("");
-                jTextField1.setEditable(false);
-                jTextField2.setText("GetLaIncognitaFromServicio"); //port.getIncognita();
-                jTextField3.setText("0");
-                cambiarImagen(6);
-            }else{
-                    /*
-                        tomo la letra ingresada
-                        la envío a validar al servicio
-                        pido la incognita al servicio y la refresco en la interfaz
-                        pido las oportunidades al servicio y las refresco en la interfaz
-                        con las oportunidades refresco la imagen
-                        limpio el campo de la letra
-                    */
-                    //port.validar(num);
-                    //jTextField2.setText(port.getIncognita());
-                    //oportunidades = port.getOportunidades()
-                    //jTextField3.setText(oportunidades);
-                    //int oportunidadesLeft = 6 - oportunidades;
-                    //cambiarImagen(oportunidadesLeft);
-                    //haGanado = port.getHaGanado();
-                    //haPerdido = port.getHaPerdido();
-                   // jTextField1.setText("");
-              //   }
-          //  }*/        
-        
-        
-        
-        
-        
+          
         
     private void cambiarImagen(int num){   
         ImageIcon prueba = new ImageIcon();
