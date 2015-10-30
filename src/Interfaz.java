@@ -244,35 +244,39 @@ boolean gano=false;
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-       /* if(ahorcado.siGano()=="1"){//gano
-        
-        }else if( Integer.parseInt(ahorcado.getIntentos())   >0){//no ha ganado pero intentos son mayor que 0
-        
-        }else{
-        
-        }*/
+
         this.jLabel6.setText(ahorcado.getIncognita());
         ahorcado.validar(  this.jTextField1.getText());
         this.jLabel7.setText(    "."+ahorcado.siGano()+"."    );
         if(ahorcado.siGano().equals("1")){
-        System.out.print("GANOOO");
         int num=Integer.parseInt(ahorcado.getIntentos());
         this.jLabel8.setText(ahorcado.getIntentos());
         this.cambiarImagen(7);
-        
+        stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+        elapsedTime = elapsedTime;
+        System.out.println("Su duración "+elapsedTime);
         }else{
             if(!perdido){
 
             int num=Integer.parseInt(ahorcado.getIntentos());
             this.jLabel8.setText(ahorcado.getIntentos());
             this.cambiarImagen(num);
-             }
+            }else{
+            stopTime = System.currentTimeMillis();
+            long elapsedTime = stopTime - startTime;
+            elapsedTime = elapsedTime;
+            System.out.println("Su duración "+elapsedTime);
+
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    static long startTime;
+    static long stopTime;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -296,10 +300,11 @@ boolean gano=false;
             java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+    
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                startTime = System.currentTimeMillis();
                 new Interfaz().setVisible(true);
             }
         });
