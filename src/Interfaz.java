@@ -12,6 +12,7 @@
  */
 import javax.swing.*;
 import javax.xml.ws.BindingProvider;
+import javax.swing.JOptionPane;
 public class Interfaz extends javax.swing.JFrame {
 private final ecci_ahorcado.ECCIAhorcadoPort ahorcado;
 boolean perdido=false;
@@ -233,7 +234,7 @@ boolean gano=false;
                 break;
                 case 0:
                     prueba = new ImageIcon(((new ImageIcon("6.png")).getImage()).getScaledInstance(300, 250, java.awt.Image.SCALE_SMOOTH));
-                    this.perdido=true;
+                    
                 break;
             }
             
@@ -247,29 +248,50 @@ boolean gano=false;
 
         this.jLabel6.setText(ahorcado.getIncognita());
         ahorcado.validar(  this.jTextField1.getText());
-        this.jLabel7.setText(    "."+ahorcado.siGano()+"."    );
+        
+         int num=Integer.parseInt(ahorcado.getIntentos());
+         
+         if(num==0){
+                this.perdido=true;
+            }
         if(ahorcado.siGano().equals("1")){
-        int num=Integer.parseInt(ahorcado.getIntentos());
-        this.jLabel8.setText(ahorcado.getIntentos());
-        this.cambiarImagen(7);
-        stopTime = System.currentTimeMillis();
-        long elapsedTime = stopTime - startTime;
-        elapsedTime = elapsedTime;
-        System.out.println("Su duración "+elapsedTime);
-        }else{
-            if(!perdido){
-
-            int num=Integer.parseInt(ahorcado.getIntentos());
-            this.jLabel8.setText(ahorcado.getIntentos());
-            this.cambiarImagen(num);
-            }else{
+            this.jTextField1.setText("");
+            this.jTextField1.enable(false);
+            this.jLabel8.setText("");
+           // int num=Integer.parseInt(ahorcado.getIntentos());
+           // this.jLabel8.setText(ahorcado.getIntentos());
+            this.cambiarImagen(7);
             stopTime = System.currentTimeMillis();
             long elapsedTime = stopTime - startTime;
-            elapsedTime = elapsedTime;
+            elapsedTime = elapsedTime/1000;
+            this.jLabel7.setText("Tiempo: "+elapsedTime);
             System.out.println("Su duración "+elapsedTime);
+            String nombreJugador= JOptionPane.showInputDialog("Digite su Alias");
+            JOptionPane.showMessageDialog(null,"Felicidades "+nombreJugador + " ¡ganaste!");
+            
+        }else if(!perdido){
+          
+                this.jTextField1.setText("");
+               
+                this.jLabel8.setText(ahorcado.getIntentos());
+                this.cambiarImagen(num);
 
-            }
+        }else{
+                stopTime = System.currentTimeMillis();
+                this.jTextField1.setText("");
+                this.jTextField1.enable(false);
+                this.jLabel8.setText("");
+                long elapsedTime = stopTime - startTime;
+                elapsedTime = elapsedTime/1000;
+                this.jLabel7.setText("Tiempo: "+elapsedTime);
+                System.out.println("Su duración "+elapsedTime);
+                this.cambiarImagen(0);
         }
+        
+            if(num==0){
+                this.perdido=true;
+            }
+        this.jLabel6.setText(ahorcado.getIncognita());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
